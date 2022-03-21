@@ -1,0 +1,27 @@
+enum Topic{
+   terror,
+   comedy,
+   love,   
+}
+
+ type Movie{
+    id: Int!
+    title: String!
+    director: String
+    topic: Topic
+ }
+
+ type Query{
+   movies: [Movie]
+   movie(id: Int!): Movie
+ }
+
+ input MovieInput{
+    title: String!
+    director: String
+    topic: Topic
+ }
+
+ type Mutation{
+    createMovie(input: MovieInput!): Boolean
+ }
